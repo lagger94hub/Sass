@@ -1,0 +1,37 @@
+$breakpoints-up:( "small" : "375px" , "big" : "1440px" );
+$breakpoints-down: ( "small" : "374px" , "big" : "1439px" );
+
+@mixin break-up ($size) {
+
+  @media all and (min-width : map-get($breakpoints-up , $size)) {
+
+    @content;
+    
+  }
+}
+
+@mixin break-down ($size) {
+
+  @media all and (max-width: map-get($breakpoints-down , $size)) {
+    @content ; 
+
+  }
+  
+}
+
+@mixin myflex ($direction,$gap,$justify,$align ) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+  gap: $gap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin rounded-border($topleft,$topright,$bottomright,$bottomleft){
+  border-radius:$topleft $topright $bottomright $bottomleft ;
+  -webkit-border-radius:$topleft $topright $bottomright $bottomleft ;
+  -moz-border-radius:$topleft $topright $bottomright $bottomleft ;
+  -ms-border-radius:$topleft $topright $bottomright $bottomleft ;
+  -o-border-radius:$topleft $topright $bottomright $bottomleft ;
+}

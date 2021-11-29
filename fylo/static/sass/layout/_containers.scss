@@ -1,0 +1,125 @@
+@use "../abstracts" as *;
+
+// here we can put the main container with tha main parts like header,main,sections,footer..etc
+
+body {
+}
+
+/*setting the full page size for body and html elements*/
+h1,
+h2,
+h4 {
+  margin: 0;
+  @include font("font-1");
+}
+h2 {
+  font-size: var(--size-font18);
+}
+h4 {
+  font-size: var(--size-font14);
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+}
+
+header,
+.sec-1,
+.sec-2,
+.sec-3,
+footer {
+  width: 100%;
+  max-width: 85.6rem;
+  margin: auto;
+}
+
+.main-container {
+  @include pad(16, 0, 0, 0);
+  min-width: 17.1875rem;
+  @include font("font-2", 12, 400);
+  header {
+    @include pad(16, 16, 16, 16);
+    @include break-point("desktop", "up") {
+      @include pad(16, 32, 16, 32);
+    }
+  }
+  .sec-1-wrapper,
+  .sec-2-wrapper,
+  .sec-3-wrapper,
+  .footer-wrapper {
+    width: 100%;
+  }
+  .sec-3-wrapper {
+    background-color: var(--clr-primary-des-blue);
+  }
+  .footer-wrapper {
+    background-color: var(--clr-primary-very-dark-blue);
+  }
+
+  .sec-1,
+  .sec-2 {
+    img,
+    &__details {
+      width: 100%;
+      max-width: 27rem;
+
+      @include break-point("desktop", "up") {
+        width: 48%;
+        max-width: 35rem;
+      }
+    }
+  }
+
+  .sec-1 {
+    @include pad(48, 32, 0, 32);
+  }
+  .sec-2 {
+    @include pad(48, 32, 48, 32);
+  }
+  .sec-3 {
+    @include pad(32, 32, 32, 32);
+    background-color: var(--clr-primary-des-blue);
+    width: 100%;
+    .item-1,
+    .item-2 {
+      text-align: center;
+      max-width: 27rem;
+      width: 100%;
+      @include break-point("desktop", "up") {
+        width: 48%;
+        max-width: 35rem;
+        flex: 1;
+        text-align: left;
+      }
+    }
+    @include break-point("desktop", "up") {
+      flex-direction: row;
+    }
+  }
+  .sec-1,
+  .sec-2 {
+    @include break-point("desktop", "up") {
+      flex-direction: row-reverse;
+    }
+  }
+
+  footer {
+    @include pad(64, 32, 32, 32);
+    background-color: var(--clr-primary-very-dark-blue);
+
+    .footer-container {
+      color: rgb(221, 219, 219);
+
+      @include break-point("desktop", "up") {
+        flex-direction: row;
+      }
+    }
+    .icons-container {
+      align-self: center;
+      @include break-point("desktop", "up") {
+        align-self: flex-start;
+      }
+    }
+  }
+}

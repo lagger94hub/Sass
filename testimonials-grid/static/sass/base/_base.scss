@@ -1,0 +1,16 @@
+@import "../abstracts/variables";
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+body {
+  font-size: map-get($myfont,size);
+  font-family: map-get($myfont,family);
+  font-weight: map-get($myfont,thick);
+  background-color: $light-grayish-blue;
+  width: 100%;
+  height: 100%;
+}

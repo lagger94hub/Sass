@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Tip Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="static/media/imgs/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="static/css/main.css">
+    
+    <!-- jQuery script -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+    <div class="main-container">
+      <img src="static/media/imgs/logo.svg" alt="logo" class="logo">
+      <div class="calc-container flex-col gap-24p falign-center">
+        <div class="tip-container flex-col falign-center gap-24p">
+          <div class="info-wrapper flex-col gap-8p falign-start">
+            <label for="bill">Bill</label>
+            <div class="input-wrapper flex-row gap-0p fjust-between falign-center">
+              <img src="static/media/imgs/icon-dollar.svg" alt="dolar" class="dolar">
+              <input dir="rtl" type="text" id="bill">
+            </div>
+          </div>
+          <div class="info-wrapper flex-col gap-8p falign-start">
+            <label for="buttons">Select Tip %</label>
+            <div class="buttons-wrapper flex-row gap-8p fjust-center">
+              <button class="mybtn-s tip selected">5%</button>
+              <button class="mybtn-s tip">10%</button>
+              <button class="mybtn-s tip">15%</button>
+              <button class="mybtn-s tip">25%</button>
+              <button class="mybtn-s tip">50%</button>
+              <input type="text" class="tip tip-custom" placeholder="Custom">
+            </div>
+          </div>
+          <div class="info-wrapper flex-col gap-8p falign-start">
+            <label for="people-num">Number of People</label>
+            <div class="input-wrapper flex-row gap-0p fjust-between falign-center">
+              <img src="static/media/imgs/icon-person.svg" alt="person" class="person">
+              <input dir="rtl" type="number" class="people-num" min="1" value="1" step="1">
+            </div>    
+          </div>
+        </div>
+        <div class="results-container flex-col falign-center gap-24p">
+          <div style="width: 100%;">
+            <div class="info-wrapper flex-row fjust-between">
+              <div>
+                <p class="amount">Tip Amount</p>
+                <p class="person">/ person</p>
+              </div>
+              <span id="tip-amount">$ 0.0</span>
+            </div>
+            <div class="info-wrapper flex-row fjust-between">
+              <div>
+                <p class="total">Total</p>
+                <p class="person">/ person</p>
+              </div>
+              <span id="total">$ 0.0</span>
+            </div>
+          </div>
+          <button type="button" class="mybtn-b reset disabled" >RESET</button>
+        </div>
+      </div>
+
+    </div>
+
+  <script src="static/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+@import "../abstracts/variables";
+p {
+  font-style: normal;
+  line-height: 2rem;
+  font-family: $myfont;
+  display: block;
+  margin:0;
+  font-size: 1em;
+}

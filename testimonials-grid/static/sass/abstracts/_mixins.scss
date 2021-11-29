@@ -1,0 +1,103 @@
+@use "sass:list";
+@import "variables";
+
+//media querries mixinis
+@mixin breakpoint-up ($size) {
+  @media all and (min-width:map-get($break-points-up,$size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+
+  @media all and (max-width:map-get($break-points-down,$size)) {
+    @content;
+  }
+  
+}
+
+
+//grid container generator
+@mixin mygrid-container($grid-gap , $column-num , $row-numn , $column-width , $row-height ,$justify , $align) {
+  display: grid;
+  gap:$grid-gap $grid-gap;
+  $temp-column:null;
+  $temp-row:null;
+
+  @for $i from 1 through $column-num {
+    $temp-column:$temp-column $column-width #{if($i !=$column-num, '' , '')};
+  }
+  @for $i from 1 through $row-num {
+    $temp-row:$temp-row $row-height #{if($i !=$row-num, '', '')}
+  }
+
+  grid-template-columns:$temp-column;
+  grid-template-rows: $temp-row;
+  justify-content: $justify;
+  align-content: $align;
+}
+
+
+//grid items' areas generator
+@mixin mygrid-item($start-row, $start-column, $end-row , $end-column , $justify , $align ) {
+  
+  grid-area:list.slash($start-row,$start-column,$end-row,$end-column);
+  justify-self: $justify;
+  align-self: $align;
+}
+
+//flex container generator
+@mixin myflex-container($direction,$gap,$justify,$align) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: $direction;
+  gap: $gap $gap ; 
+  justify-content: $justify;
+  align-content: $align;
+
+}
+//rounded borders mixin
+@mixin  rounded-corners($t-left,$t-right,$b-right,$b-left) {
+  border-radius: $t-left $t-right $b-right $b-left;
+  -webkit-border-radius: $t-left $t-right $b-right $b-left;
+  -moz-border-radius: $t-left $t-right $b-right $b-left;
+  -ms-border-radius: $t-left $t-right $b-right $b-left;
+  -o-border-radius: $t-left $t-right $b-right $b-left;
+}
+//transition translate mixin
+@mixin mytranslate($x-axis,$y-axis) {
+  transform: translate($x-axis,$y-axis);
+  -webkit-transform: translate($x-axis,$y-axis);
+  -moz-transform: translate($x-axis,$y-axis);
+  -ms-transform: translate($x-axis,$y-axis);
+  -o-transform: translate($x-axis,$y-axis);
+}
+
+//centering mixinis 
+@mixin xy-center_margin {
+  margin-left: 50%;
+  margin-top: 50%;
+  @include mytranslate(-50%,-50%);
+}
+@mixin x-center_margin {
+  margin-left: 50%;
+  @include mytranslate(-50%,0%);
+}
+@mixin y-center_margin {
+  margin-top:50%;
+  @include mytranslate(0%,-50%);
+}
+
+@mixin xy-center_position {
+  left:50%;
+  top:50%;
+  @include mytranslate(-50%,-50%);
+}
+@mixin x-center_position {
+  left: 50%;
+  @include mytranslate(-50%,0%);
+}
+@mixin y-center_position {
+  top:50%;
+  @include mytranslate(0%,-50%);
+}

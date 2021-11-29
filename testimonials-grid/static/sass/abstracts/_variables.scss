@@ -1,0 +1,10 @@
+$myfont:( "family":('Barlow Semi Condensed', sans-serif),"size":13px , "thick":500 , "thicker":600);
+
+$break-points-up:  ("mobile" : "320px", "tablet":"760px" , "laptop":"1024px" , "laptop-l":"1440px");
+$break-points-down:  ("mobile" : "319px", "tablet":"759px" , "laptop":"1023px" , "laptop-l":"1439px");
+
+
+//grid data
+$column-num:3;
+$row-num:2;
+$grid-gap:1rem;

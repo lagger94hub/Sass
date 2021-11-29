@@ -1,0 +1,314 @@
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+
+.flex-container {
+ 
+  @include myflex-container(column,1.5rem,center,center);
+
+  min-width: 199px;
+  max-width:34rem;
+  margin: auto;
+  @include breakpoint-up(laptop){
+    flex-direction: row;
+    max-width:50rem;
+    height: 100%;
+    align-content: flex-start;
+
+  }
+
+
+
+  &__device {
+    @include rounded-corners(3rem,3rem,3rem,3rem);
+    @include myflex-container (column ,0,flex-start,flex-start);
+    width: 75%;
+    flex: 1 1;
+    align-self: center;
+    border:solid 1rem white;
+    box-shadow: 0 0 4rem -2rem $grayish-blue;
+    background-color: $light-grayish-Violet;
+    position: relative;
+    @include breakpoint-up(laptop) {
+      flex: 25%;
+      @include y-center_margin;
+      @include rounded-corners(1.5rem,1.5rem,1.5rem,1.5rem);
+      border-width: .5rem;
+
+
+    }
+    
+
+    
+    &::before {
+      content: " ";
+      display: block;
+      width : 50%;
+      height: 3.5vw;
+      background-color: white;
+      position: absolute;
+      @include x-center_position;
+      @include rounded-corners(0,0,2rem,2rem);
+      @include breakpoint-down(mobile){
+        height: 2%;
+      }
+      @include breakpoint-up(laptop){
+        height: 1.10vw;
+        @include rounded-corners(0,0,1rem,1rem);
+      }
+    }
+    &__head {
+
+      @include myflex-container(row,.25rem,space-around,flex-start);
+      @include rounded-corners(2rem,2rem,0,0);
+      flex: 1 1;
+      width: 100%;
+      background-image: linear-gradient(to right,$light-violet,$light-magenta);
+      padding:3rem 1rem 1rem 1rem;
+      @include breakpoint-up(laptop){
+
+        gap:.11rem .11rem;
+        padding:1.5rem .5rem .5rem .5rem;
+        @include rounded-corners(1rem,1rem,0,0);
+
+
+      }
+      
+      &__avatar {
+        @include rounded-corners(50%,50%,50%,50%);
+        display:inline-block;
+        max-width:40px;
+        max-height:40px;
+        border:solid white 1px;
+        @include breakpoint-up(laptop) {
+          max-width: 20px;
+          max-height: 20px;
+        }
+      }
+      .span-container {
+      
+        flex :1 1 ;
+        &__user-name ,&__user-status{
+          display: block;
+          width: 100%;
+        }
+        &__user-name {
+          color:$light-grayish-Violet;
+          font-weight: map-get($myfont,medium);
+          @include breakpoint-up(laptop) {
+            font-size: 10px;
+          }
+        }
+        &__user-status {
+          font-size: 11px;
+          font-weight: map-get($myfont,small);
+          color:$pale-violet;
+          @include breakpoint-up(laptop) {
+           font-size: 8px;
+          }
+        }
+
+      }
+      &__arrow ,&__dots{
+        display: block;
+        padding:10px 4px;
+        color:white;
+        font-weight: bold;
+        @include breakpoint-up(laptop) {
+          padding: 5px 2px;
+        }
+        
+      }
+
+
+    }
+    &__sent {
+      @include rounded-corners(15px,15px,15px,5px);
+      flex: 1 1;
+      background-color:rgb(230, 228, 228);
+      padding: .5rem;
+      margin: .5rem .5rem 0 .5rem;
+      width: 75%;
+      font-weight: map-get($myfont,small);
+      color:$moderate-violet;
+      @include breakpoint-up(laptop) {
+          padding: .25rem;
+          margin : .25rem .25rem 0 .25rem;
+          font-size: 10px;
+          @include rounded-corners(7.5px,7.5px,7.5px,7.5px);
+
+      }
+
+      &:nth-child(7){
+        margin-top: 1rem;
+        @include breakpoint-up(laptop) {
+          margin-top:.5rem;
+        }
+
+      }
+    }
+    &__photos {
+      @include myflex-container(row,.5rem,flex-end,flex-end);
+      flex: 1 1 ;
+      align-self: flex-end;
+      width: 75%;
+      margin: 1rem .5rem 0 .5rem;
+      @include breakpoint-up(laptop) {
+        gap:.25rem .25rem;
+        margin: .5rem .25rem 0 .25rem;
+      }
+      &__dog {
+        @include rounded-corners(10px,10px,10px,10px);
+        width: 20%;
+        max-width: 65px;
+        @include breakpoint-up(laptop){
+          max-width: 32.5px;
+          @include rounded-corners(5px,5px,5px,5px);
+          
+        }
+
+      }
+    }
+    &__rec {
+      @include rounded-corners(15px,15px,5px,15px);
+      flex: 1 1;
+      background-color: white;
+      margin: .5rem .5rem 0 .5rem;
+      padding: .5rem;
+      width: 75%;
+      align-self: flex-end;
+      @include breakpoint-up(laptop){
+        margin: .25rem .25rem 0 .25rem;
+        padding: .25rem;
+        font-size: 10px;
+        @include rounded-corners(7.5px,7.5px,7.5px,7.5px);
+      }
+    }
+    &__walk {
+      @include rounded-corners(15px,15px,15px,5px);
+      @include myflex-container(row,1rem,space-around,space-around);
+      width: 85%;
+      background-image: linear-gradient(to left,$light-violet,$light-magenta);
+      padding:.5rem;
+      color:$light-grayish-Violet;
+      font-weight: map-get($myfont,small);
+      font-size:.75rem;
+      margin: .5rem .5rem 1rem .5rem;
+      @include breakpoint-up(laptop){
+        gap:.5rem .5rem;
+        padding:.25rem;
+        font-size:.50rem;
+        margin: .25rem .25rem .5rem .25rem;
+        @include rounded-corners(7.5px,7.5px,7.5px,7.5px);
+      }
+      span {
+        flex: 2 1;
+      }
+      &::before {
+        @include rounded-corners(50%,50%,50%,50%);
+        content: "";
+        display: block;
+        left:.5rem;
+        top: .5rem;
+        bottom: .5rem;
+        border: solid 1px white;
+        min-width: 15px;
+        margin-right: .5rem;
+        @include breakpoint-up(laptop) {
+          left: .25rem;
+          top:.25rem;
+          bottom:.25rem;
+          min-width: 15px;
+          margin-right: .25rem;
+          
+
+        }
+        
+      }
+      &:nth-child(8)::after , &:nth-child(9)::after {
+        content: "$29";
+        font-weight: map-get($myfont,big);
+        font-size: 1rem;
+        @include breakpoint-up(laptop){
+          font-size: 10px;
+        }
+      }
+      &:nth-child(9)::after {
+        content: "$49";
+      }
+    }
+    &__message-container {
+      width: 100%;
+      margin: auto;
+      position: relative;
+      padding: 1rem;
+      @include breakpoint-up(laptop){
+          padding: .5rem;
+      }
+
+      &__input{
+        width: 100%;
+        @include rounded-corners(40px,40px,40px,40px);
+        border: 0;
+        padding: 1rem;
+        outline: none;
+        @include breakpoint-up(laptop){
+          padding: .5rem;
+          @include rounded-corners(20px,20px,20px,20px);
+        }
+
+        &::placeholder {
+
+          @include breakpoint-down(mobile){
+            font-size:3vw;
+          }
+          @include breakpoint-up(laptop){
+            font-size:.75vw;
+          }
+          
+        }
+      }
+      &::after{
+        @include rounded-corners(50%,50%,50%,50%);
+        @include y-center_position;
+        content:"\2192";
+        display: block;
+        position: absolute;
+        right: 1.5rem;
+        padding: .5rem;
+        background-color: $very-dark-desaturated-Violet;
+        color: white;
+        @include breakpoint-up(laptop){
+          padding:.25rem;
+          right: .75rem;
+        }
+
+        
+      }
+    }
+  }
+
+  &__text {
+    flex:1 1;
+    width: 80%;
+    @include breakpoint-up(laptop) {
+      flex: 65%;
+      height: fit-content;
+      @include y-center_margin;
+    }
+
+    &__title {
+      text-align: center;
+      color: $very-dark-desaturated-Violet;
+    }
+    &__details {
+      text-align: center;
+      width: 80%;
+      margin: auto;
+      color:$dark-grayish-violet;
+    }
+  }
+
+}

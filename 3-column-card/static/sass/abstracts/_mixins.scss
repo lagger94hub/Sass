@@ -1,0 +1,38 @@
+@import "variables";
+
+@mixin myflex ($direction , $gap , $justify , $align) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+  gap: $gap;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin mygrid($r-gap,$c-gap,$c-num,$r-num,$c-size,$r-size) {
+  display:grid;
+  //height: 100%;
+  gap:$r-gap $c-gap;
+  grid-template-columns: $c-size $c-size $c-size;
+  grid-auto-rows:minmax(200px , auto) 
+  //grid-template-rows: repeat($r-num,$r-size);
+
+}
+@mixin rounded-borders($top-l,$top-r,$bottom-r,$bottom-l) {
+
+  border-radius: $top-l  $top-r  $bottom-r  $bottom-l;
+  -webkit-border-radius: $top-l  $top-r  $bottom-r  $bottom-l;
+  -moz-border-radius: $top-l  $top-r  $bottom-r  $bottom-l;
+  -ms-border-radius: $top-l  $top-r  $bottom-r  $bottom-l;
+  -o-border-radius: $top-l  $top-r  $bottom-r  $bottom-l;
+}
+@mixin breakpoint-up($size) {
+  @media all and (min-width:map-get($breaking-points2,$size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media all and (max-width:map-get($breaking-points1,$size)) {
+    @content;
+  }
+}

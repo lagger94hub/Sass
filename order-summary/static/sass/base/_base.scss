@@ -1,0 +1,31 @@
+@import "../abstracts/mixinis";
+@import "../abstracts/variables";
+@import "../abstracts/colors";
+
+html , body {
+  height: 100%;
+}
+
+body {
+
+  font-family: $myfont;
+  font-size: 16px;
+  background-color:$Pale_blue;
+  background-repeat: no-repeat;
+  background-size:100%;
+  vertical-align: middle;  
+  @include myflex(column,0,center,center);
+
+  @include break-down(small) {
+    background-image:url("/static/img/pattern-background-mobile.svg")
+  }
+
+  @include break-up(small) { 
+    background-image: url("/static/img/pattern-background-desktop.svg");
+    
+  }
+}
+
+div {
+  text-align: center;
+}

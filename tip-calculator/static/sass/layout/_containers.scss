@@ -1,0 +1,68 @@
+@use "../abstracts" as *;
+
+// here we can put the main container with tha main parts like header,main,sections,footer..etc
+
+/*setting the full page size for body and html elements*/
+/* the general design with paddings, margins, main-bgcolors, main-fonts and basic layout */
+
+
+body {
+  background-color: white;
+  @include font($font:"font-1", $size:1rem);
+  font-weight: 700;
+  background-color: var(--clr-neutral-lightGrayishCyan);
+
+}
+
+.main-container {
+  min-width: 18.5rem;
+  max-width: 30.0625rem;
+  @include break-point("medium", "up") {
+    max-width: 62rem;
+  }
+  margin: auto;
+  background-color: var(--clr-neutral-lightGrayishCyan);
+}
+.calc-container {
+  background-color: white;
+  padding: 1.5rem;
+  @include rounded-corners(1.5rem, 1.5rem, 0, 0);
+  @include break-point("medium", "up") {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    @include rounded-corners(1.5rem, 1.5rem, 1.5rem, 1.5rem);
+
+  }
+}
+.tip-container {
+  width: 100%;
+  .info-wrapper {
+    width: 95%;
+  }
+  .input-wrapper {
+    width: 100%;
+    background-color: var(--clr-neutral-lightGrayishCyan2);
+    padding: .5rem;
+    @include rounded-corners(.5rem, .5rem, .5rem, .5rem)
+  }
+  .buttons-wrapper {
+    width: 100%;
+  }
+}
+.results-container {
+  width: 100%;
+  background-color: var(--clr-neutral-vDarkCyan);
+  padding: 1rem;
+  @include rounded-corners(.75em, .75em, .75em, .75rem);
+  @include break-point("medium", "up") {
+    justify-content: space-between;
+  }
+  .info-wrapper {
+    width: 100%;
+    padding-bottom: 2rem;
+    @include break-point("medium", "up") {
+      padding-bottom: 3rem;
+    }
+  }
+}

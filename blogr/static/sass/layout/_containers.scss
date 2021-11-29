@@ -1,0 +1,79 @@
+@use "../abstracts" as *;
+
+// here we can put the main container with tha main parts like header,main,sections,footer..etc
+
+/*setting the full page size for body and html elements*/
+/* the general design with paddings, margins, main-bgcolors, main-fonts and basic layout */
+
+
+body {
+  background-color: white;
+  @include font($font:"font-1", $size:1rem);
+  font-weight: 400;
+
+}
+
+
+
+.main-container {
+  min-width: 16.25rem;
+  // max-width: 36rem;
+  margin: auto;
+}
+
+[class^="row"] {
+  padding: 0 1.5rem;
+}
+
+.row-1 {
+
+  padding: 4rem 0 6rem 0 ;
+  background: url(../media/imgs/bg-pattern-intro.svg), linear-gradient(0deg, var(--clr-gradient-lightRed), var(--clr-gradient-vLightRed));
+  background-position: 30% -25rem , center;
+  background-size: 100rem, cover;
+  background-repeat:  no-repeat;
+  @include rounded-corners(0, 0, 0, 6rem);
+
+  .navbar {
+    background-color: transparent;
+    padding: 0 1.5rem 5rem 1.5rem;
+  }
+  .details {
+    padding: 0rem 1.5rem 2rem 1.5rem;
+    text-align: center;
+  }
+  .btn-wrapper {
+    padding: 1.5rem;
+  }
+}
+.row-4 {
+
+  padding: 0;
+  @include mygrid-container($grid-gap:0, $column-num:1, $row-num:23, $column-width: 100%, $row-height:2rem );
+
+  img {
+    top: -200px;
+    @include mygrid-item (1, 1, 5, 1);
+    z-index: 2;
+  }
+  .details {
+    @include mygrid-item (6, 1, 24, 1);
+    @include rounded-corners(0, 6rem, 0, 6rem);
+    flex-wrap: nowrap;
+    padding: 14rem 1.5rem 4rem 1.5rem;
+    background-image: url(../media/imgs/bg-pattern-circles.svg), linear-gradient(to right, var(--clr-gradient-vDarkGrayBlue), var(--clr-gradient-vDarkDesBlue));
+    background-position: 50% -10rem, center;
+    background-size: 150%, cover;
+    background-repeat: no-repeat;
+  }
+}
+.row-6 {
+  @include rounded-corners(0, 6rem, 0, 0);
+  padding: 4rem 1.5rem 4rem 1.5rem;
+  flex-wrap: nowrap;
+  background-color: var(--clr-neutral-vDarkBlackBlue);
+  color: white;
+  img {
+    width: initial;
+  }
+}

@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+/*b stands for big, this input's width is 100%*/
+.email-b {
+  width: 100%;
+  @include font("font-1");
+  outline: none;
+  &::placeholder {
+    color: var(--clr-neutral-light-gray);
+  }
+
+}

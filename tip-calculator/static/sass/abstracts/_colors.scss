@@ -1,0 +1,26 @@
+// here we can put all the colors that we will end up using
+
+$page-1: (
+  primary: (
+  "strongCyan":hsl(172, 67%, 45%)
+  ),
+  accent: (
+    "bright-blue":hsl(224, 93%, 58%),
+    "moderate-blue":hsl(170, 45%, 43%),
+  ),
+  neutral: (
+    "vDarkCyan":hsl(183, 100%, 15%),
+    "darkGrayishCyan":hsl(186, 14%, 43%),
+    "darkGrayishCyan2":hsl(184, 14%, 56%),
+    "lightGrayishCyan":hsl(185, 41%, 84%),
+    "lightGrayishCyan2":hsl(189, 41%, 97%),
+    "white":hsl(0, 0%, 100%),
+  ),
+  shadow: (
+    "light-gray": rgba(197, 197, 197, 1),
+    "dark-shadow": rgb(61, 61, 61),
+  ),
+  hovered: (
+    "hdark-blue": hsl(236, 45%, 26%)
+  )
+);

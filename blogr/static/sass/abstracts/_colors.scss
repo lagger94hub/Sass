@@ -1,0 +1,35 @@
+// here we can put all the colors that we will end up using
+
+$page-1: (
+  primary: (
+  "lightRed":hsl(356, 100%, 66%), //CTA text
+  "vlightRed": hsl(355, 100%, 74%), //CTA hover  background
+  "vdarkBlue": hsl(208, 49%, 24%), //headings
+  ),
+  accent: (
+    "moderate-blue":hsl(170, 45%, 43%),
+  ),
+  neutral: (
+    "white":hsl(0, 0%, 100%), //text
+    "grayishBlue":hsl(240, 2%, 79%), //footer text
+    "vDarkGrayishBlue":hsl(207, 13%, 34%), //body copy
+    "vDarkBlackBlue":hsl(240, 10%, 16%), // footer background
+    "lightGrayishCyan2":hsl(189, 41%, 97%),
+  ),
+  shadow: (
+    "light-gray": rgba(197, 197, 197, 1),
+    "dark-shadow": rgb(61, 61, 61),
+  ),
+  hovered: (
+    "hdark-blue": hsl(236, 45%, 26%)
+  ),
+  gradient: (
+    //Background gradient - Intro/CTA mobile nav:
+    "vLightRed":hsl(13, 100%, 72%),
+    "lightRed":hsl(353, 100%, 62%),
+
+    //Background gradient - body:
+    "vDarkGrayBlue":hsl(237, 17%, 21%),
+    "vDarkDesBlue": hsl(237, 23%, 32%)
+  )
+);

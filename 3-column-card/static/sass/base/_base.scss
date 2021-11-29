@@ -1,0 +1,11 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+html , body {
+  width:100%;
+  height: 100%;
+}
+body {
+  font-size: map-get($myfont1,size);
+  @include myflex (column,0,center,center);
+}

@@ -1,0 +1,49 @@
+@use "../abstracts" as *;
+
+/* b stands for big , this button's width is 100%*/
+.mybtn-s, .mybtn-b {
+  border: 0;
+  @include rounded-corners(.25rem, .25rem, .25rem, .25rem);
+  text-decoration:none;
+  text-align: center;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+.mybtn-b {
+  width: 100%;
+  padding: .75rem 0;
+}
+.mybtn-s {
+  padding: 1rem;
+}
+.disabled {
+  pointer-events: none;
+  background-color: darkgrey !important;
+}
+
+.tip, .tip-custom {
+  width: 45%;
+  font-size: 1.5rem;
+  transition: background-color ease-out .2s;
+  -webkit-transition: background-color ease-out .2s;
+  -moz-transition: background-color ease-out .2s;
+  -ms-transition: background-color ease-out .2s;
+  -o-transition: background-color ease-out .2s;
+}
+.tip {
+  color: white;
+  background-color: var(--clr-neutral-vDarkCyan);
+
+  &:hover{
+  background-color: var(--clr-primary-strongCyan);
+  color: var(--clr-neutral-vDarkCyan);
+  }
+  
+}
+
+.selected {
+  background-color: var(--clr-primary-strongCyan);
+  color: var(--clr-neutral-vDarkCyan);
+}

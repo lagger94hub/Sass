@@ -1,0 +1,143 @@
+@import "../abstracts/mixinis";
+@import "../abstracts/variables";
+@import "../abstracts/colors";
+
+.main-container {
+
+  background-color: white;
+  margin: auto;
+  max-height: 680px;
+
+  @include rounded-border(10px,10px,10px,10px);
+
+
+  &__dancer {
+      
+    @include rounded-border(10px,10px,0,0);
+
+
+    width: 100%;
+   
+
+  }
+
+  &__flex-container {
+
+    margin:.5rem;
+
+    @include myflex(column,0,center,center);
+  
+    &__text {
+
+      width: 100%;
+      @include break-up(small) {
+        width:65%;
+      }
+      text-align: center;
+      padding:1rem;
+
+      P {
+        font-weight: $small;
+        color:$Dark_blue;
+      }
+
+    }
+
+  
+
+    &__plan {
+      
+      width: 98%;
+      background-color: $Vpale_blue;
+      @include myflex(row,1%,space-between,center);
+      padding:.5rem;
+      @include rounded-border(10px,10px,10px,10px);
+      @include break-up(small) {
+        width:75%;
+      }
+
+      .music-icon{
+        display: inline-block;
+        flex: 0 1 auto;
+      }
+      .plan-item {
+        flex: 0 1 auto;
+
+        span {
+          display: block;
+          width: 100%;
+        }
+        &__plan {
+          font-weight: $big;
+          color:$Dark_blue;
+        }
+        &__plan-details {
+          color: $Dblue;
+        }
+        
+      }
+    
+
+      .change {
+        flex: 0 1 auto;
+        font-weight: $big;
+        color:$Bright_blue;
+
+        &:hover {
+          text-decoration: none;
+          opacity: 0.5;
+        }
+      }
+ 
+    }
+
+    &__buttons {
+
+      width:90%;
+      margin-top:1em;
+      @include break-up(small){
+        width: 50% ;
+      }
+      
+      
+      &__proceed {
+        color:white;
+        background-color: $Bright_blue;
+        font-weight: $big;
+        padding:1em;
+        width:100%;
+        @include rounded-border(10px,10px,10px,10px);
+        box-shadow: 0px 10px 15px $Dblue;
+
+        &:hover {
+          opacity: 0.7;
+          cursor:pointer;
+        }
+
+      }
+      &__cancel {
+        padding:1.9em 1em 2em 1em;
+        color:$Dblue;
+        font-weight: $big;
+        span:hover {
+          color:$Dark_blue;
+          cursor:pointer;
+        }
+      }
+    }
+
+  }
+
+
+
+  @include break-down(small) {
+    width: 90%;
+  }
+  @include break-up(small) {
+    max-width: 600px;
+  }
+
+
+
+}
+

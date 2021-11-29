@@ -1,0 +1,135 @@
+@import "../abstracts/colors";
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+
+.main-container {
+  @include mygrid-container($grid-gap,1,$row-num,1fr,auto,center,center);
+  width: 85%;
+  @include x-center_margin;
+
+  &__grid-item-1,&__grid-item-2,&__grid-item-3,&__grid-item-4,&__grid-item-5{
+
+    padding: 2rem;
+    @include rounded-corners(5px,5px,5px,5px);
+
+    &__personal-data {
+      width: 100%;
+      @include myflex-container(row,10px,center,center);
+      
+
+      .span-container {
+        width: 75%;
+        display: inline;  
+        align-self: center; 
+        flex: 1 1;     
+      }
+      &__person-image {
+        max-width: 50px;
+        max-height: 50px;
+        display: block;
+        @include rounded-corners(50%,50%,50%,50%);
+      }
+      &__person-name {
+        width:100%;
+        display: inline-block;
+        font-weight: 700;
+        padding:2px;
+      }
+      &__person-occ {
+        width:100%;
+        display: inline-block;
+        padding:1px;
+      }
+    }
+
+    &__title {
+      font-size: large;
+      font-weight: 500;
+    }
+  
+  }
+  &__grid-item-1 {
+    background-color: $violet;
+  }
+  &__grid-item-2{
+    background-color: $grayish-blue;
+  }
+  &__grid-item-3{
+    background-color: $mywhite;
+  }
+  &__grid-item-4{
+    background-color: $blackish-blue;
+  }
+  
+  &__grid-item-5{
+    background-color: $mywhite;
+  }
+  &__grid-item-1__title ,&__grid-item-2__title,&__grid-item-4__title {
+    color: $light-grayish-blue;
+  }
+  &__grid-item-1__personal-data__person-name ,&__grid-item-2__personal-data__person-name,&__grid-item-4__personal-data__person-name {
+    color: $light-grayish-blue;
+  }
+  &__grid-item-1__personal-data__person-occ ,&__grid-item-2__personal-data__person-occ,&__grid-item-4__personal-data__person-occ {
+    color: $light-gray;
+  }
+  &__grid-item-1__details ,&__grid-item-2__details,&__grid-item-4__details {
+    color: $light-gray;
+  }
+  &__grid-item-3__title ,&__grid-item-5__title {
+    color: $blackish-blue;
+  }
+  &__grid-item-3__personal-data__person-name ,&__grid-item-5__personal-data__person-name {
+    color: $blackish-blue;
+  }
+  &__grid-item-3__personal-data__person-occ ,&__grid-item-5__personal-data__person-occ {
+    color: $grayish-blue;
+  }
+  &__grid-item-3__details ,&__grid-item-5__details {
+    color: $grayish-blue;
+  }
+  
+  &__grid-item-1 {
+    @include mygrid-item(1,1,2,2,stretch,stretch);
+  }
+  &__grid-item-2 {
+    @include mygrid-item(2,1,3,2,stretch,stretch);
+  }
+  &__grid-item-3 {
+    @include mygrid-item(3,1,4,2,stretch,stretch);
+  }
+  &__grid-item-4 {
+    @include mygrid-item(4,1,5,2,stretch,stretch);
+  }
+  &__grid-item-5 {
+    @include mygrid-item(5,1,6,2,stretch,stretch);
+  }
+
+  @include breakpoint-up(tablet) {
+
+    width: 90%;
+    margin-top: 5%;
+    
+    @include mygrid-container($grid-gap,4,$row-num,25%,auto,space-around,space-around);
+
+    
+    &__grid-item-1 {
+      @include mygrid-item(1,1,2,3,stretch,stretch);
+      
+    }
+    &__grid-item-2 {
+      @include mygrid-item(1,3,2,4,stretch,stretch);
+    }
+    &__grid-item-3 {
+      @include mygrid-item(2,1,3,2,stretch,stretch);
+    }
+    &__grid-item-4 {
+      @include mygrid-item(2,2,3,4,stretch,stretch);
+    }
+    &__grid-item-5 {
+      @include mygrid-item(1,4,3,5,stretch,stretch);
+    }
+    
+  }
+}

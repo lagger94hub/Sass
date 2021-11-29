@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.u-list {
+  list-style-type: none;
+  padding: 0;
+  margin:0;
+
+  li {
+    @include pad(0,0,12,0);
+  }
+}

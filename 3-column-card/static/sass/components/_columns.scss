@@ -1,0 +1,96 @@
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.main-container {
+
+  width: 90%;
+  margin:auto;
+
+  @include myflex(column , 0 , center , center);
+
+  &__column {
+
+    flex: 0 1 ;
+    padding:1rem;
+    color:$ts-white;
+    @include myflex(column,1px,space-around,center);
+
+    &__heading {
+      color: $vlight-grey;
+      font-family:map-get($myfont2,family);
+      font-weight:map-get($myfont2,weight);
+    }
+
+    &__text {
+      font-family: map-get($myfont1,family);
+      font-weight: map-get($myfont1,weight);
+    }
+
+    &__button {
+      border: 2px solid white;
+      width: fit-content;
+      padding: .5rem 1rem;
+      @include rounded-borders(20px,20px,20px,20px);
+      font-family: map-get($myfont1,family);
+      font-weight: map-get($myfont1,weight);
+      background-color: $vlight-grey;
+      &.first{
+        color:$bright-orange;
+      }
+      &.second {
+        color:$dark-cyan;
+      }
+      &.third {
+        color: $vdark-cyan;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color:transparent;
+        color:$vlight-grey;
+      }
+    }
+
+    &__car-logo {
+      display: block;
+      max-width:20rem;
+    }
+
+    &:nth-child(1) {
+      background-color: $bright-orange;
+    }
+    &:nth-child(2) {
+      background-color: $dark-cyan;
+    }
+    &:nth-child(3) {
+      background-color: $vdark-cyan;
+    }
+  }
+
+  @include breakpoint-up(small){
+
+    @include mygrid(0,0,3,5,1fr,20%);
+    
+    &__column {
+      
+      &:nth-child(1){
+        grid-area: 1/1/3/2;
+        align-self: stretch;
+        @include rounded-borders(5px,0px,0px,5px);
+      }
+      &:nth-child(2){
+        grid-area: 1/2/3/3;
+        align-self: stretch;
+      }
+      &:nth-child(3){
+        grid-area: 1/3/3/4;
+        align-self: stretch;
+        @include rounded-borders(0px,5px,5px,0px);
+      }
+     
+      
+
+    }
+  }
+  
+}

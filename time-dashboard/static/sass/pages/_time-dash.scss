@@ -1,0 +1,89 @@
+@use "../abstracts" as *;
+
+.wrap-1 {
+  .avatar {
+    width: 10%;
+    min-width: 4rem;
+    min-height: 4rem;
+    border:white 2px solid;
+    background-image: url(../media/imgs/image-jeremy.png);
+    background-size: cover;
+    @include rounded-corners();
+    @include break-point("laptop", "up") {
+      @include marg(0,0,16,0);
+    }
+
+
+  }
+  .bio {
+    p:nth-child(1) {
+      color:var(--clr-neutral-pale-blue);
+      padding-bottom: var(--size-8p);
+      @include break-point ("laptop", "up") {
+        width: fit-content;
+        margin: auto;
+      }
+    }
+    p:nth-child(2) {
+      font-size: var(--size-font14);
+      @include break-point("laptop", "up") {
+        font-size: var(--size-font26);
+        text-align: center;
+      }
+    }
+  }
+  .bottom {
+    span {
+      
+      color:var(--clr-neutral-desaturated-blue);
+
+      &:hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
+    @include break-point("laptop", "up") {
+      
+      span  {
+        @include pad(16,0,16,0);
+        width: fit-content;
+        margin: auto;
+      }
+      
+    }
+    .active {
+      color:white;
+    }
+  }
+}
+[class^="grid-item"] {
+
+  .bottom {
+    .type {
+      span:nth-child(1) {
+        font-weight: 700;
+      }
+      span:nth-child(2) {
+        color:var(--clr-neutral-desaturated-blue);
+        &:hover {
+          color:white;
+        }
+      }
+      padding-bottom: 1rem;
+    }
+    .time {
+      span:nth-child(1) {
+        font-size: var(--size-font22);
+      }
+      span:nth-child(2) {
+        font-size: var(--size-font10);
+        color:var(--clr-neutral-pale-blue);
+        height: fit-content;
+      }
+    }
+    &:hover {
+      background-color: var(--clr-hovered-hdark-blue);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+
+.navbar-nav {
+  background-color: white;
+  font-weight: 600;
+  color: var(--clr-primary-vdarkBlue);
+  @include rounded-corners(1rem, 1rem, 1rem, 1rem);
+  li {
+    text-align: center;
+    padding: .5rem 0;
+  }
+}
+.navbar-collapse {
+  padding-top: 3rem;
+}
+
+.dropdown {
+  .nav-link, .dropdown-item {
+    text-align: center;
+    font-weight: 600;
+    color: var(--clr-primary-vdarkBlue);
+  }
+  .dropdown-menu {
+    width: 90%;
+    margin: auto;
+    background-color: rgb(233, 233, 233);
+  }
+  .dropdown-item {
+    padding: .5rem 0;
+  }
+}
+.navbar-toggler-icon {
+ background-image: url("../media/imgs/icon-hamburger.svg");
+}
+
+.login, .signup {
+  @include font($font:"font-2");
+  font-weight: 700;
+  padding: .5rem 2rem !important;
+  width: fit-content;
+  margin: auto;
+}
+.signup {
+  color: white !important;
+  background-image: linear-gradient(0deg, var(--clr-gradient-lightRed), var(--clr-gradient-vLightRed));
+  @include rounded-corners(3rem, 3rem, 3rem, 3rem)
+}
+.start, .learn {
+
+}
+.learn {
+
+}

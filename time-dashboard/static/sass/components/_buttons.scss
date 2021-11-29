@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+/* b stands for big , this button's width is 100%*/
+.btn-b {
+  @include pad(12,0,12,0);
+  width: 100%;
+  background-color: var(--clr-accent-bright-blue) ;
+  color: var(--clr-neutral-light-blue);
+  border: 0;
+  @include rounded-corners(.25rem, .25rem, .25rem, .25rem);
+  @include font("font-1");
+  font-weight: 600;
+  text-decoration:none;
+  text-align: center;
+  cursor: pointer;
+
+}

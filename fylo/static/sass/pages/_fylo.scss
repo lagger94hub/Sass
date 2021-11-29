@@ -1,0 +1,164 @@
+@use "../abstracts" as *;
+
+// non utility page to put all the page selectors
+
+header {
+  img {
+    width: 20%;
+    max-width: 4.625rem;
+    max-height: 1.375rem;
+    @include break-point("desktop", "up") {
+      max-width: 7rem;
+      max-height: 3rem;
+    }
+  }
+
+  .span-cont {
+    width: 80%;
+    @include break-point("desktop", "up") {
+      gap: var(--size-48p);
+    }
+    &__item {
+      color: var(--clr-primary-des-blue);
+      font-weight: 500;
+    }
+  }
+}
+
+.sec-1 {
+  &__details {
+
+    h2,
+    .p-dark {
+      color: var(--clr-primary-very-dark-blue);
+      text-align: center;
+      @include break-point("desktop", "up") {
+        text-align: left;
+      }
+    }
+
+    .btn-b {
+      @include my-shadow($spread: 1px, $blur: 4px, $color: var(--clr-shadow-light-gray));
+    }
+  }
+}
+
+.sec-2 {
+  &__details {
+    h4 {
+      color: var(--clr-primary-very-dark-blue);
+      text-align: center;
+      @include break-point("desktop", "up") {
+        text-align: left;
+      }
+    }
+    .p-light {
+      text-align: left;
+      color: var(--clr-primary-des-blue);
+    }
+
+    .see-work {
+      width: fit-content;
+      margin: auto;
+      @include pad(8, 0, 8, 0);
+      color: var(--clr-accent-moderate-blue);
+      text-align: center;
+      border-bottom: solid var(--clr-accent-moderate-blue) 2px;
+      @include break-point("desktop", "up") {
+        text-align: left;
+        margin: 0;
+      }
+
+
+      .fa-arrow-right {
+        width: fit-content;
+        height: fit-content;
+        background-color: var(--clr-accent-moderate-blue);
+        color: white;
+        @include pad($all: 4);
+        font-size: var(--size-font7);
+        @include rounded-corners();
+      }
+    }
+    .card {
+      @include pad(40, 24, 24, 40);
+
+      @include my-shadow($blur: 10px, $color: var(--clr-shadow-light-gray));
+      p {
+        font-size: var(--size-font10);
+        color: var(--clr-primary-very-dark-blue);
+      }
+      .bio {
+        color: var(--clr-primary-very-dark-blue);
+        img {
+          width: 2.3rem;
+          height: 2.3rem;
+          @include rounded-corners();
+        }
+        &__name {
+          font-weight: bolder;
+          letter-spacing: 1px;
+        }
+        &__position {
+          font-size: var(--size-font9);
+          font-weight: 500;
+        }
+      }
+
+      @include pseudo($content: "\201C", $top: 0px, $left: 18px) {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: var(--size-font48);
+        display: block;
+        height: fit-content;
+      }
+    }
+  }
+}
+
+.item-1 {
+  h4 {
+    @include pad($all: 16);
+    color: rgb(236, 236, 236);
+    font-weight: 600;
+    @include break-point("desktop", "up") {
+      padding-left: 0;
+    }
+  }
+  p {
+    font-size: var(--size-font12);
+    color: rgb(221, 219, 219);
+  }
+}
+
+.item-2 {
+  a {
+    color: rgb(221, 219, 219);
+    font-size: var(--size-font10);
+    @include my-shadow($blur: 5px, $color: var(--clr-shadow-dark-shadow));
+  }
+  input {
+    @include my-shadow($blur: 5px, $color: var(--clr-shadow-dark-shadow));
+    border: 0;
+  }
+}
+footer {
+  img {
+    width: 50%;
+    max-width: 10rem;
+    min-height: 3rem;
+    filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(115deg) brightness(108%) contrast(108%);
+  }
+}
+
+.fa-phone,
+.fa-envelope {
+  @include pad(12, 12, 12, 0);
+}
+.icons-container {
+
+  i {
+    @include pad($all: 8);
+    border: solid rgb(221, 219, 219) 1px;
+    @include rounded-corners();
+  }
+}
