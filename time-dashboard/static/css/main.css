@@ -824,7 +824,7 @@ body {
   min-width: 4rem;
   min-height: 4rem;
   border: white 2px solid;
-  background-image: url(../media/imgs/image-jeremy.png);
+  background-image: url(./../media/imgs/image-jeremy.png);
   background-size: cover;
   border-radius: 50% 50% 50% 50%;
   -webkit-border-radius: 50% 50% 50% 50%;
