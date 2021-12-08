@@ -378,7 +378,7 @@ p, h1 {
 }
 .container__main-part:first-child {
   padding-top: 4rem;
-  background-image: url(/static/media/imgs/bg-header-mobile.png);
+  background-image: url(static/media/imgs/bg-header-mobile.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
