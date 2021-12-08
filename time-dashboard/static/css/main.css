@@ -695,7 +695,7 @@ body {
   }
 }
 .grid-item-2 .top {
-  background: url(/media/imgs/icon-work.svg) no-repeat;
+  background: url(static/media/imgs/icon-work.svg) no-repeat;
 }
 
 @media all and (min-width: 48.0625rem) {
@@ -706,7 +706,7 @@ body {
   }
 }
 .grid-item-3 .top {
-  background: url(../media/imgs/icon-play.svg) no-repeat;
+  background: url(static/media/imgs/icon-play.svg) no-repeat;
 }
 
 @media all and (min-width: 48.0625rem) {
@@ -717,7 +717,7 @@ body {
   }
 }
 .grid-item-4 .top {
-  background: url(../media/imgs/icon-study.svg) no-repeat;
+  background: url(static/media/imgs/icon-study.svg) no-repeat;
 }
 
 @media all and (min-width: 48.0625rem) {
@@ -728,7 +728,7 @@ body {
   }
 }
 .grid-item-5 .top {
-  background: url(../media/imgs/icon-exercise.svg) no-repeat;
+  background: url(static/media/imgs/icon-exercise.svg) no-repeat;
 }
 
 @media all and (min-width: 48.0625rem) {
@@ -739,7 +739,7 @@ body {
   }
 }
 .grid-item-6 .top {
-  background: url(../media/imgs/icon-social.svg) no-repeat;
+  background: url(static/media/imgs/icon-social.svg) no-repeat;
 }
 
 @media all and (min-width: 48.0625rem) {
@@ -750,7 +750,7 @@ body {
   }
 }
 .grid-item-7 .top {
-  background: url(../media/imgs/icon-self-care.svg) no-repeat;
+  background: url(static/media/imgs/icon-self-care.svg) no-repeat;
 }
 
 [class^=grid-item] {
