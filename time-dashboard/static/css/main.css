@@ -695,7 +695,7 @@ body {
   }
 }
 .grid-item-2 .top {
-  background: url(../media/imgs/icon-work.svg) no-repeat;
+  background: url(/media/imgs/icon-work.svg) no-repeat;
 }
 
 @media all and (min-width: 48.0625rem) {
